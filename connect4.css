@@ -1,0 +1,75 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#table{
+  background-color: wheat;
+  height: 200px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;  
+  background-color: orchid;
+}
+#game{
+  margin-bottom: 8rem;
+}
+/* game board table */
+
+#board td {
+  width: 90px;
+  height: 90px;
+  border: solid 5px white;
+}
+
+/* pieces are div within game table cells: draw as colored circles */
+
+.piece {
+  /* TODO: make into circles */
+  margin: 5px;
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  animation: bounce .5s ease-in-out;
+}
+
+.p1{
+  background-color: orange;
+}
+
+.p2{
+  background-color:red;
+}
+
+/* TODO: make pieces red/blue,  depending on player 1/2 piece */
+/* column-top is table row of clickable areas for each column */
+#column-top td {
+  border: dashed 1px lightgray;
+}
+
+#column-top td:hover {
+  background-color: gold;
+}
+
+
+@keyframes bounce{
+  0%{
+    transform: translateY(-12px);
+  }
+  50%{
+    transform: translateY(0px);
+  }
+  100%{
+    transform: translateY(-35px);
+  }
+}
